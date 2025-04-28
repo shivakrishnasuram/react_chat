@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import axios from 'axios';
 
-const socket = io('http://localhost:5000');
+const socket = io('https://chat-backend-4-7fo1.onrender.com');
 
 function App() {
   const [user, setUser] = useState(null);
@@ -16,7 +16,7 @@ function App() {
   }, []);
 
   const login = async () => {
-    const res = await axios.post('http://localhost:5000/login', {
+    const res = await axios.post('https://chat-backend-4-7fo1.onrender.com/login', {
       username: prompt('Username'),
       password: prompt('Password')
     });
